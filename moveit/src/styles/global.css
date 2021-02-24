@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-:root{
+:root {
   --white: #fff;
   --background: #f2f3f5;
   --gray-line: #dcdde0;
@@ -18,13 +18,14 @@
   --blue-twitter: #2aa9e2;
 }
 
-@media(max-width: 1080px){
+/* LEMBRAR: do it*/
+@media (max-width: 1080px) {
   html {
     font-size: 93.75%; /* 15px */
   }
 }
 
-@media(max-width: 720px){
+@media (max-width: 720px) {
   html {
     font-size: 87.05%; /* 14px */
   }
@@ -35,15 +36,62 @@ body {
   color: var(--text);
 }
 
-body, input, textarea, button {
+body,
+input,
+textarea,
+button {
   font: 400 1rem 'Inter', sans-serif;
 }
 
 button {
+  /* LEMBRAR: do it */
   cursor: pointer;
 }
 
 a {
+  /* LEMBRAR: do it */
   color: inherit;
   text-decoration: none;
+}
+
+.container {
+  height: 100vh;
+  max-width: 992px;
+  margin: 0 auto; /* LEMBRAR: centralizar um componente usando apenas as bordas*/
+  padding: 2.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-bar {
+  display: flex;
+  align-items: center;
+}
+
+.experience-bar span {
+  font-size: 1rem;
+}
+
+.experience-bar > div {
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--gray-line);
+  margin: 0 1.5rem;
+  position: relative;
+}
+
+.experience-bar > div > div {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--green);
+}
+
+span.current-experience {
+  position: absolute;
+  top: 12px;
+  transform: translateX(
+    -50%
+  ); /* LEMBRAR: posicionar um elemento usando o centro como âncora*/
 }
