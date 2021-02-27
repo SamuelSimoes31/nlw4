@@ -1,4 +1,4 @@
-.challangeBoxContainer {
+.challengeBoxContainer {
   height: 100%;
 
   background: var(--white);
@@ -13,19 +13,19 @@
   text-align: center;
 }
 
-.challangeNotActive {
+.challengeNotActive {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.challangeNotActive strong {
+.challengeNotActive strong {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.4;
 }
 
-.challangeNotActive p {
+.challengeNotActive p {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@
   margin-top: 3rem;
 }
 
-.challangeNotActive p img {
+.challengeNotActive p img {
   margin-bottom: 1rem;
 }
 

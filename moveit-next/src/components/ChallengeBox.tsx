@@ -1,10 +1,10 @@
-import styles from '../styles/components/ChallangeBox.module.css'
+import styles from '../styles/components/ChallengeBox.module.css'
 
-export function ChallangeBox(){
+export function ChallengeBox(){
   return (
-    <div className={styles.challangeBoxContainer}>
+    <div className={styles.challengeBoxContainer}>
       { true ? (
-          <div className={styles.challangeIsActive}>
+          <div className={styles.challengeActive}>
             <header>Ganhe 400 xp</header>
 
             <main>
@@ -16,20 +16,20 @@ export function ChallangeBox(){
             <footer>
               <button
                 type="button"
-                className={styles.challangeFailedButton}
+                className={styles.challengeFailedButton}
               >
                 Falhei
               </button>
               <button
                 type="button"
-                className={styles.challangeSucceededButton}
+                className={styles.challengeSucceededButton}
               >
                 Completei
               </button>
             </footer>
           </div>
         ) : (
-        <div className={styles.challangeNotActive}>
+        <div className={styles.challengeNotActive}>
           <strong>Finalize um ciuclo para receber um desafio</strong>
           <p>
             <img src="icons/level-up.svg" alt="Level up"/>
