@@ -1,4 +1,4 @@
-import { createContext, useCallback, useState } from 'react';
+import { createContext, useCallback, useMemo, useState } from 'react';
 import challenges from '../../challenges.json'
 
 interface ChallengesProviderProps {
@@ -16,8 +16,10 @@ interface ChallengesContextData {
   currentExperience: number;
   challengesCompleted: number;
   activeChallenge: Challenge | null;
+  experienceToNextLevel: number;
   startNewChallenge: () => void;
   levelUp: () => void;
+  resetChallenge: () => void;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
@@ -39,6 +41,14 @@ export function ChallengesProvider({ children }) {
     setActiveChallenge(challenge);
   },[challenges]);
 
+  const resetChallenge = useCallback(() => {
+    setActiveChallenge(false);
+  },[]);
+
+  const experienceToNextLevel = useMemo(() => {
+    return Math.pow((level+1)*4,2)
+  },[level]);
+
   return (
     <ChallengesContext.Provider value={{
       level,
@@ -46,7 +56,9 @@ export function ChallengesProvider({ children }) {
       challengesCompleted,
       startNewChallenge,
       levelUp,
-      activeChallenge
+      activeChallenge,
+      resetChallenge,
+      experienceToNextLevel
     }}>
       {children}
     </ChallengesContext.Provider>
