@@ -6,13 +6,13 @@ import styles from '../styles/components/Profile.module.css'
 export function Profile() {
   const { level } = useContext(ChallengesContext);
 
-  const { name, github } = useContext(ProfileContext);
+  const { name, github, unproceed } = useContext(ProfileContext);
 
   return (
     <div className={styles.profileContainer}>
-      <img src={`https://github.com/${github}.png`} alt="Perfil"/>
+      <img src={`https://github.com/${github}.png`} alt="Perfil" onClick={unproceed} />
       <div>
-        <strong>{name}</strong>
+        <strong onClick={unproceed}>{name}</strong>
         <p>
           <img src="icons/level.svg" alt="Level"/>
           Level {level}
