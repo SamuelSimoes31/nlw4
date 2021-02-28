@@ -2,6 +2,7 @@ import { CompletedChallenges } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
 import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from '../components/Profile';
+import { ProfileModal } from '../components/ProfileModal';
 
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
@@ -10,7 +11,8 @@ import styles from '../styles/pages/Home.module.css'
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountDownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
-import React from "react";
+import React, { useContext } from "react";
+import { ProfileContext } from "../contexts/ProfileContext";
 
 interface HomeProps {
   level: number
@@ -19,6 +21,8 @@ interface HomeProps {
 }
 
 export default function Home( props: HomeProps ) {
+  const { proceeded } = useContext(ProfileContext);
+
   return (
     <ChallengesProvider 
       level={props.level}
@@ -41,6 +45,7 @@ export default function Home( props: HomeProps ) {
               <ChallengeBox />
             </div>
           </section>
+          {!proceeded && <ProfileModal />}
         </CountdownProvider>
       </div>
     </ChallengesProvider>
