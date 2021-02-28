@@ -29,8 +29,9 @@ export const ProfileContextProvider = ({children, ...rest} : ProfileContextProvi
   useEffect(() => {
     Cookies.set('name',String(name));
     Cookies.set('github',String(github));
+    Cookies.set('proceeded',String(proceeded));
     
-  }, [name,github]);
+  }, [name,github,proceeded]);
 
   const proceed = () => {
     if(name && github) setProceeded(true);
@@ -38,6 +39,8 @@ export const ProfileContextProvider = ({children, ...rest} : ProfileContextProvi
   }
 
   const unproceed = () => {
+    console.log('oxe')
+
     setProceeded(false);
   }
 

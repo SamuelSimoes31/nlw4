@@ -5,12 +5,12 @@ import styles from '../styles/components/ProfileModal.module.css';
 
 export const ProfileModal = () => {
 
-  const { name, github, setName, setGithub, proceed } = useContext(ProfileContext);
+  const { name, github, setName, setGithub, proceeded, proceed } = useContext(ProfileContext);
 
   return (
     <>
     {
-      proceed ? null : (
+      proceeded ? null : (
           <div className={styles.overlay}>
         <div className={styles.container}>
           <header>Bem vindo ao Moveit</header>
